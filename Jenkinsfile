@@ -1,13 +1,8 @@
-pipeline {
-  agent any
- 
-  tools {nodejs "node"}
- 
-  stages {
-    stage('Example') {
-      steps {
-        sh 'npm config ls'
-      }
-    }
-  }
+node('nodejs') {
+	stage('Clone') {
+		checkout scm
+	}
+	stage('Build') {
+		npm --version
+	}
 }
