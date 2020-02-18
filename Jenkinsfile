@@ -3,6 +3,6 @@ node('nodejs') {
 		checkout scm
 	}
 	stage('Build') {
-		npm --version
+		sh 'npm --version'
 	}
 }
