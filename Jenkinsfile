@@ -5,12 +5,8 @@ pipeline {
             args '-p 3000:3000' 
         }
     }
+    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
     stages {
-        stage('Current Version') {
-            steps {
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-            }
-        }
         stage('Install Dependencies') { 
             steps {
 		        sh 'npm --version'
