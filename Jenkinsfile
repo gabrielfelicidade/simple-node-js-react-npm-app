@@ -6,10 +6,13 @@ pipeline {
         }
     }
     stages {
-        stage('Build') { 
+        stage('Pull') {
+            scm checkout
+        }
+        stage('Install Dependencies') { 
             steps {
-		sh 'npm --version'
-                sh 'npm install' 
+		        sh 'npm --version'
+                sh 'npm install'
             }
         }
     }
