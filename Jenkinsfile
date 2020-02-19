@@ -1,11 +1,10 @@
 pipeline {
     agent {
         docker {
-            image 'node:6-alpine' 
+            image 'node:13.8.0-alpine3.11' 
             args '-p 3000:3000' 
         }
     }
-    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
     stages {
         stage('Install Dependencies') { 
             steps {
