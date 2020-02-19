@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Current Version') {
             steps {
-                echo 'Running ${env.BUILD_ID} on ${env.JENKINS_URL}'
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
         stage('Install Dependencies') { 
